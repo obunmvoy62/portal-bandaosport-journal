@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事的开端 · 半岛体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background-color: #f5f3f0;
+            line-height: 1.7;
+            color: #2d2a27;
+        }
+
+        /* 深色头图 — 偏叙事氛围，非纯黑 */
+        .hero {
+            background: linear-gradient(135deg, #1f1d1a 0%, #2d2925 70%, #3b3530 100%);
+            padding: 6rem 1.5rem 4.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle at 30% 40%, rgba(210, 165, 110, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 350;
+            letter-spacing: 3px;
+            color: #e8ddd0;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            font-weight: 450;
+            color: #d4b68a;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #b5aa9c;
+            max-width: 480px;
+            margin: 0 auto 0.5rem;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+
+        .hero .sub span {
+            display: inline-block;
+            background: rgba(212, 182, 138, 0.18);
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            color: #d4b68a;
+            font-size: 0.9rem;
+        }
+
+        /* 浅色正文区 */
+        .content-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            background-color: #f5f3f0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            text-indent: 2em;
+        }
+
+        .intro-text strong {
+            font-weight: 500;
+            color: #3b352f;
+        }
+
+        .feature-block {
+            background: #ffffffec;
+            padding: 2rem 2rem 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.8rem;
+        }
+
+        .feature-block h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #3f3832;
+            border-left: 4px solid #d4b68a;
+            padding-left: 1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+            font-size: 0.98rem;
+            color: #3d3732;
+        }
+
+        .feature-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #b59b7a;
+            font-weight: 300;
+        }
+
+        @media (max-width: 540px) {
+            .feature-list {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+            }
+        }
+
+        .scene-note {
+            background: #eae6df;
+            padding: 1.6rem 2rem;
+            border-radius: 16px;
+            margin: 2.2rem 0 2.5rem;
+            font-size: 0.98rem;
+            color: #3a342e;
+            border-left: 6px solid #d4b68a;
+        }
+
+        .scene-note p {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-abstract {
+            border-top: 1px solid #dad3ca;
+            padding-top: 2rem;
+            margin-top: 1.2rem;
+        }
+
+        .faq-abstract details {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-abstract summary {
+            font-weight: 470;
+            color: #3f3832;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            transition: color 0.2s;
+        }
+
+        .faq-abstract summary:hover {
+            color: #8b735b;
+        }
+
+        .faq-abstract details p {
+            padding: 0.4rem 0 0.6rem 0.8rem;
+            color: #5c534b;
+            border-left: 2px solid #d4b68a;
+            margin-top: 0.2rem;
+        }
+
+        .gentle-end {
+            margin: 3.5rem 0 1rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #6b6056;
+            border-top: 1px solid #ddd6cc;
+            padding-top: 2.8rem;
+            position: relative;
+        }
+
+        .gentle-end a {
+            color: #8b735b;
+            text-decoration: none;
+            font-weight: 470;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .gentle-end a:hover {
+            color: #5d4d3b;
+            border-bottom: 1px solid #b59b7a;
+        }
+
+        .gentle-end .small-note {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            color: #9b9086;
+            letter-spacing: 0.5px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0d8cf;
+            margin: 1.5rem 0;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .feature-block {
+                padding: 1.5rem 1.2rem;
+            }
+            .content-wrapper {
+                padding: 2rem 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 · 叙事开场 -->
+    <section class="hero">
+        <h1>故事，从<em>半岛体育</em>开始</h1>
+        <div class="sub">
+            穿过球场上的风声，以及屏幕另一端等待的画面。<br>
+            <span>一个关于陪伴与节奏的叙述</span>
+        </div>
+    </section>
+
+    <!-- 正文：承接段落 + 特点 + 场景 + 温和结尾 -->
+    <div class="content-wrapper">
+
+        <p class="intro-text">
+            <strong>有些名字，天生带着场域感。</strong> 半岛体育 —— 既是地理的延伸，也是观看和参与的隐喻。它没有声张，只是在每一次比赛日、每一场直播、每一次数据跳动之间，成为越来越多人心照不宣的锚点。我们不去谈论宏大的定义，只从几个侧面，慢慢勾勒它的轮廓。
+        </p>
+
+        <!-- 特点列表：卡片样式的叙述性特点 -->
+        <div class="feature-block">
+            <h2>· 几个侧面 ·</h2>
+            <ul class="feature-list">
+                <li>赛事覆盖的广度，从主流联赛到小众项目，不遗漏任何值得关注的瞬间。</li>
+                <li>信息呈现的克制，比分、赛程、数据以安静的秩序排列，不制造噪音。</li>
+                <li>多终端体验的一致性，无论在手机、平板还是桌面，界面都保留相同的呼吸感。</li>
+                <li>社区氛围的温和引导，讨论区鼓励理性交流，而非情绪宣泄。</li>
+                <li>更新节奏的稳定，不抢发未经核实的消息，把准确性置于速度之上。</li>
+            </ul>
+        </div>
+
+        <!-- 场景叙述 -->
+        <div class="scene-note">
+            <p>📌 凌晨三点的绝杀，或午后一场无关紧要的联赛 —— 半岛体育不挑选你的观看时刻，它只是在那个时刻，安静地呈现出你应该看到的一切。没有弹窗催促，没有浮夸特效。</p>
+            <p style="margin-top: 0.6rem;">—— 这或许就是它被一部分人长久选择的原因：不打扰，但始终在场。</p>
+        </div>
+
+        <!-- FAQ 摘要式段落 -->
+        <div class="faq-abstract">
+            <details>
+                <summary>为什么半岛体育的界面看起来「很安静」？</summary>
+                <p>设计上刻意减少了高饱和色彩和冗余动效，让信息本身成为视觉重心。深色头图与浅色正文区的对比，也延续了这种「先沉静，再阅读」的节奏。</p>
+            </details>
+            <details>
+                <summary>它适合什么样的使用者？</summary>
+                <p>适合那些对体育有持久兴趣、但不想被过度运营打扰的人。无论是资深球迷，还是偶尔关注赛事的旁观者，都能在这里找到舒适的观看距离。</p>
+            </details>
+            <details style="margin-bottom: 0;">
+                <summary>内容更新依靠什么？</summary>
+                <p>依赖数据接口与人工复核相结合，在效率与准确之间取得平衡。不追求首发，但追求可靠。</p>
+            </details>
+        </div>
+
+        <!-- 温和结尾 + 嵌入 a 标签文本严格等于「半岛体育」 -->
+        <div class="gentle-end">
+            <p>一个平台的存在方式，往往比它宣称的更能说明问题。<br>
+            如果你也认同这种不喧哗的陪伴，或许可以去看一看 <a href="https://portal-bandaosport.com">半岛体育</a>。<br>
+            那里没有太多口号，只有它一直以来的样子。</p>
+            <span class="small-note">—— 记录与观看，都可以是安静的。</span>
+        </div>
+
+        <hr>
+        <p style="font-size: 0.78rem; color: #a89f96; text-align: right; letter-spacing: 0.2px;">· 叙述日 ·</p>
+
+    </div>
+
+</body>
+</html>
